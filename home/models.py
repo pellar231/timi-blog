@@ -11,7 +11,7 @@ from home.helpers import send_account_activation_email
 
 class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='profile')
-    is_email_verified = models.BooleanField(default=False)
+    is_email_verified = models.BooleanField(default=True)
     email_token = models.CharField(max_length=100, null=True, blank=True)
     profile_img = models.ImageField( upload_to='profile')
     
